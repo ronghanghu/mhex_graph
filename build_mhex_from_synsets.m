@@ -54,6 +54,7 @@ end
 num_leaf = length(leaves);
 fprintf('leaf synset number: %d\n', num_leaf);
 
+fprintf('linking ancestors and descendants...');
 % add descendents to each node. the descendents of a node are its children
 % and the descendents of each child
 % initialize descendents with children
@@ -108,6 +109,8 @@ end
 % ancestors and descendents plus the node itself
 E_des_i = E_des | logical(eye(num_v));
 E_anc_i = E_anc | logical(eye(num_v));
+
+fprintf('done\n');
 
 % list state space
 num_s = num_leaf;

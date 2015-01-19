@@ -36,4 +36,4 @@ for v = 1:length(synsets)
   synsets(v).words = synsets(v).name;
 end
 
-save meta_200.mat synsets synsets_200_original;
+save meta_200.mat synsets;

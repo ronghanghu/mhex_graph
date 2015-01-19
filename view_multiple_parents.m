@@ -17,6 +17,7 @@ function view_multiple_parents(G)
 synsets = G.synsets;
 num_v = G.num_v;
 
+% list those synsets that have multiple parents
 count = 0;
 for v = 1:num_v
   if length(synsets(v).parents) > 1

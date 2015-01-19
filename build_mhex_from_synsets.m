@@ -19,6 +19,7 @@ num_v = length(synsets);
 fprintf('total synset number: %d\n', num_v);
 
 % add parents to each node
+assert(~isfield(synsets, 'parents'));
 for v = 1:num_v
   v_children = synsets(v).children;
   for vid = 1:length(v_children)

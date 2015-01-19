@@ -22,6 +22,7 @@ fprintf('total synset number: %d\n', num_v);
 assert(~isfield(synsets, 'parents'));
 for v = 1:num_v
   v_children = synsets(v).children;
+  assert(all(v_children > 0 & v_children <= num_v));
   for vid = 1:length(v_children)
     v_child = v_children(vid);
     if ~isfield(synsets(v_child), 'parents')

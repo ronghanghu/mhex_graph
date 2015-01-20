@@ -28,4 +28,3 @@ save(filename, 'M1', 'M2', '-v7.3');
 fprintf('successfully dumped MHEX Graph to %s\n', filename);
 
 end
-

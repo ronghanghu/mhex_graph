@@ -1,2 +1,1 @@
-import numpy as np, scipy.io
-import caffe
+from .load_mhex_into_caffe import *

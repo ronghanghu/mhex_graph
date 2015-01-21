@@ -2,10 +2,13 @@
 import numpy as np, scipy.io
 import caffe
 
-def load_mhex(caffe_prototxt, caffe_model, mhex_mat_file, save_file)
+def load_mhex(caffe_prototxt, caffe_model, mhex_mat_file, save_file):
   """
-  Load two matrices into MHEX network
-
+  load matrices dumped from matlab into Caffe network
+  MHEX implemenatation in Caffe consists of two InnerProductLayer at bottom and
+  top, and one SoftmaxLayer between them.
+  The inner product layer below softmax should be named "mhex_mat1", and 
+  The inner product layer above softmax should be named "mhex_mat2".
   """
   # load architecture for pure Caffe net and the fine-tuned model
   net = caffe.Net(caffe_prototxt, caffe_model)
@@ -18,9 +21,9 @@ def load_mhex(caffe_prototxt, caffe_model, mhex_mat_file, save_file)
   # weights are class x feat in R-CNN, but feat x class in cCaffe, and
   # Caffe requires 4 dimensions
   M1 = M1.transpose()
-  M1 = M1.[np.newaxis, np.newaxis, :, :]
+  M1 = M1[np.newaxis, np.newaxis, :, :]
   M2 = M2.transpose()
-  M2 = M2.[np.newaxis, np.newaxis, :, :]
+  M2 = M2[np.newaxis, np.newaxis, :, :]
 
   # coerce to C-contiguous memory for Caffe
   # (numpy makes it seem to be so already, but its illusory: check .flags)

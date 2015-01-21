@@ -11,8 +11,8 @@ def load_mhex(caffe_prototxt, caffe_model, mhex_mat_file, save_file):
   The inner product layer above softmax should be named "mhex_mat2".
   """
   # load architecture for pure Caffe net and the fine-tuned model
+  caffe.set_mode_cpu()
   net = caffe.Net(caffe_prototxt, caffe_model)
-  net.set_mode_cpu()
 
   # load R-CNN model weights and scalings
   mat = scipy.io.loadmat(mhex_mat_file)

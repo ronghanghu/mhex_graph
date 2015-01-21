@@ -121,8 +121,7 @@ for sid = 1:num_s
   % each legal assignment corresponds to a leaf node being turned on
   vid = sid;
   v_leaf = leaves(vid);
-  S(sid, v_leaf) = true;
-  S(sid, E_anc(v_leaf, :)) = true;
+  S(sid, E_anc_i(v_leaf, :)) = true;
 end
 
 % add fields to MHEX Graph G

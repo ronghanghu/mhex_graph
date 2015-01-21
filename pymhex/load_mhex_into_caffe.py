@@ -18,11 +18,8 @@ def load_mhex(caffe_prototxt, caffe_model, mhex_mat_file, save_file):
   mat = scipy.io.loadmat(mhex_mat_file)
   M1, M2 = mat['M1'], mat['M2']
 
-  # weights are class x feat in R-CNN, but feat x class in cCaffe, and
   # Caffe requires 4 dimensions
-  M1 = M1.transpose()
   M1 = M1[np.newaxis, np.newaxis, :, :]
-  M2 = M2.transpose()
   M2 = M2[np.newaxis, np.newaxis, :, :]
 
   # coerce to C-contiguous memory for Caffe

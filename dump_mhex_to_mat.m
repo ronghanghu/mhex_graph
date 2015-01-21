@@ -22,12 +22,12 @@ remove_root = true;
 % the first matrix multiplication, turning num_v raw category scores into
 % num_leaf raw assignment scores
 % matrix size: num_leaf * num_v
-M1 = double(G.S);
+M1 = single(G.S);
 
 % the second matrix multiplication, turning num_leaf assignment
 % probabilities into num_v marginal category probabilities
 % matrix size: num_v * num_leaf
-M2 = double(G.E_des_i(:, G.leaves));
+M2 = single(G.E_des_i(:, G.leaves));
 
 if remove_root
   is_root = ((1:G.num_v) == G.root);
@@ -35,7 +35,7 @@ if remove_root
   M2 = M2(~is_root, :);
 end
 
-save(filename, 'M1', 'M2', '-v7.3');
+save(filename, 'M1', 'M2', '-v7');
 fprintf('successfully dumped MHEX Graph to %s\n', filename);
 
 end

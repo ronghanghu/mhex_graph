@@ -1,4 +1,4 @@
-function dump_mhex_to_mat(G, filename, remove_root)
+function dump_mhex_to_mat(G, filename, include_root)
 % dump_mhex_to_mat(G)
 %
 %   G is MHEX Graph handle
@@ -17,8 +17,8 @@ function dump_mhex_to_mat(G, filename, remove_root)
 % typically you do not want to have weights for root in MHEX since it does
 % not affect anything, also you don't want to calculate root probability
 % since it is always 1
-if ~exist('remove_root', 'var')
-  remove_root = true;
+if ~exist('include_root', 'var')
+  include_root = false;
 end
 
 % the first matrix multiplication, turning num_v raw category scores into
@@ -31,7 +31,7 @@ M1 = single(G.S);
 % matrix size: num_v * num_leaf
 M2 = single(G.E_des_i(:, G.leaves));
 
-if remove_root
+if ~include_root
   is_root = ((1:G.num_v) == G.root);
   M1 = M1(:, ~is_root);
   M2 = M2(~is_root, :);

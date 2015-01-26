@@ -2,7 +2,7 @@
 import numpy as np, scipy.io
 import caffe
 
-def load_mhex(caffe_prototxt, caffe_model, mhex_mat_file, save_file, load_mat2=True):
+def load_mhex(caffe_prototxt, caffe_model, mhex_mat_file, save_file, load_mat1=True, load_mat2=True):
   """
   load matrices dumped from matlab into Caffe network
   MHEX implemenatation in Caffe consists of two InnerProductLayer at bottom and
@@ -28,8 +28,9 @@ def load_mhex(caffe_prototxt, caffe_model, mhex_mat_file, save_file, load_mat2=T
   M2 = np.ascontiguousarray(M2)
 
   # transplant SVMs into fc-rcnn. [0] is weight matrix, [1] is bias
-  net.params['mhex_mat1'][0].data[...] = M1
-  net.params['mhex_mat1'][1].data[...] = 0
+  if load_mat1:
+    net.params['mhex_mat1'][0].data[...] = M1
+    net.params['mhex_mat1'][1].data[...] = 0
   if load_mat2:
     net.params['mhex_mat2'][0].data[...] = M2
     net.params['mhex_mat2'][1].data[...] = 0

@@ -1,8 +1,10 @@
 function dump_mhex_to_mat(G, filename, include_root)
-% dump_mhex_to_mat(G)
+% dump_mhex_to_mat(G, filename, include_root)
+%   Dump MHEX Graph to files
 %
 %   G is MHEX Graph handle
 %   filename is the fullpath of output dump file
+%   include_root is whether or not to include root node in dumped file
 
 % AUTORIGHTS
 % ---------------------------------------------------------

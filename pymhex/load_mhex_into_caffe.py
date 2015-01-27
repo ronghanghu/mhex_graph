@@ -1,7 +1,4 @@
-#! /usr/bin/env python3.4
-import numpy as np, scipy.io
-import caffe
-
+#! /usr/bin/python
 def load_mhex(caffe_prototxt, caffe_model, mhex_mat_file, save_file, load_mat1=True, load_mat2=True):
   """
   load matrices dumped from matlab into Caffe network
@@ -10,6 +7,9 @@ def load_mhex(caffe_prototxt, caffe_model, mhex_mat_file, save_file, load_mat1=T
   The inner product layer below softmax should be named "mhex_mat1", and 
   The inner product layer above softmax should be named "mhex_mat2".
   """
+  import numpy as np, scipy.io
+  import caffe
+
   # load architecture for pure Caffe net and the fine-tuned model
   caffe.set_mode_cpu()
   net = caffe.Net(caffe_prototxt, caffe_model)

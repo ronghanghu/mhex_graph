@@ -15,7 +15,7 @@ fid_s = fopen(save_file, 'w');
 
 count_all = 0;
 
-fprintf('relabeling...');
+fprintf('correcting...');
 
 line_in = fgetl(fid_i);
 while ischar(line_in)

@@ -23,6 +23,10 @@ fprintf(['Please make sure that labels in input_file is'...
   ' see http://caffe.berkeleyvision.org/gathered/examples/imagenet.html'
   ' for details.\n']);
 
+fprintf('input file: %s\n', input_file);
+fprintf('save file: %s\n', save_file);
+fprintf('relabel precent: %3.f\n', relabel_percent);
+
 assert(relabel_percent >= 0 && relabel_percent <= 1);
 
 fid_i = fopen(input_file, 'r');

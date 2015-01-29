@@ -51,7 +51,7 @@ while ischar(line_in)
   count_all = count_all + 1;
   
   % get new line
-  line_in = fgetl(fid);
+  line_in = fgetl(fid_i);
 end
 
 fclose(fid_i);

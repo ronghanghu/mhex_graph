@@ -19,9 +19,9 @@ function relabel_imagenet(G, input_file, save_file, relabel_percent)
 % ---------------------------------------------------------
 
 fprintf(['Please make sure that labels in input_file is'...
-  ' the SAME ORDER as in ILSVRC Devkit. The original Caffe file is NOT.'...
+  ' the SAME ORDER as in ILSVRC Devkit. The Caffe file is NOT.'...
   ' see http://caffe.berkeleyvision.org/gathered/examples/imagenet.html'
-  ' for details.']);
+  ' for details.\n']);
 
 assert(relabel_percent >= 0 && relabel_percent <= 1);
 

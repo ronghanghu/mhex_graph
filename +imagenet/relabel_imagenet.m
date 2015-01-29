@@ -20,12 +20,12 @@ function relabel_imagenet(G, input_file, save_file, relabel_percent)
 
 fprintf(['Please make sure that labels in input_file is'...
   ' the SAME ORDER as in ILSVRC Devkit. The Caffe file is NOT.'...
-  ' see http://caffe.berkeleyvision.org/gathered/examples/imagenet.html'...
-  ' for details.\n']);
+  ' See http://caffe.berkeleyvision.org/gathered/examples/imagenet.html'...
+  ' for details.\n\n']);
 
 fprintf('input file: %s\n', input_file);
 fprintf('save file: %s\n', save_file);
-fprintf('relabel precent: %3.f\n', relabel_percent);
+fprintf('relabel precent: %.3f\n', relabel_percent);
 
 assert(relabel_percent >= 0 && relabel_percent <= 1);
 

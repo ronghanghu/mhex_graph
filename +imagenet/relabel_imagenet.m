@@ -39,7 +39,7 @@ while ischar(line_in)
   % decide randomly whether to relabel
   if rand(1) <= relabel_percent
     % relabel to its parent
-    parents = G.synsets(im_label);
+    parents = G.synsets(im_label).parents;
     assert(~isempty(parents));
     num_parents = length(parents);
     im_label = parents(randsample(num_parents, 1));

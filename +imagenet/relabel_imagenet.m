@@ -18,6 +18,11 @@ function relabel_imagenet(G, input_file, save_file, relabel_percent)
 % this file (or any portion of it) in your project.
 % ---------------------------------------------------------
 
+fprintf(['Please make sure that labels in input_file is'...
+  ' the SAME ORDER as in ILSVRC Devkit. The original Caffe file is NOT.'...
+  ' see http://caffe.berkeleyvision.org/gathered/examples/imagenet.html'
+  ' for details.']);
+
 assert(relabel_percent >= 0 && relabel_percent <= 1);
 
 fid_i = fopen(input_file, 'r');
@@ -37,7 +42,7 @@ while ischar(line_in)
   % change from 0-indexed to 1-indexed
   im_label = im_label + 1;
   % decide randomly whether to relabel
-  if rand(1) <= relabel_percent
+  if relabel_percent > 0 && rand(1) <= relabel_percent
     % relabel to its parent
     parents = G.synsets(im_label).parents;
     assert(~isempty(parents));

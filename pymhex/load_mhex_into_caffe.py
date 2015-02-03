@@ -14,7 +14,7 @@ def load_mhex(caffe_prototxt, caffe_model, mhex_mat_file, save_file, load_mat1=T
   caffe.set_mode_cpu()
   if len(caffe_model) > 0:
     net = caffe.Net(caffe_prototxt, caffe_model)
-  else
+  else:
     net = caffe.Net(caffe_prototxt)
 
   # load R-CNN model weights and scalings

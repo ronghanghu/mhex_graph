@@ -49,9 +49,14 @@ for v = 1:length(synsets)
     end
 
     % create new synset
-    % replacing WNID from nxxxxxxxx to dxxxxxxx to represent 'dummy' synset
+    % changing WNID from nxxxxxxxx to dxxxxxxx to represent 'dummy' synset
     noa_synset = synsets(v);
     noa_synset.WNID(1) = 'd';
+    noa_synset.children = [];
+    if isfield(noa_synset, 'num_children')
+      noa_synset.num_children = 0;
+    end
+    
     synsets_augmented = cat(1, synsets_augmented, noa_synset);
     insert_idx = length(synsets_augmented);
     

@@ -1,5 +1,5 @@
 function synsets = modify_meta_200(synsets)
-% synsets = modify_meta_200(synsets)
+% synsets = imagenet.modify_meta_200(synsets)
 %   Modify the ILSVRC DET 200 classes synsets to remove those single
 %   classes
 %

@@ -1,5 +1,5 @@
 function view_multiple_parents(G)
-% view_multiple_parents(G)
+% imagenet.view_multiple_parents(G)
 %   inspect those nodes who have multiple parents
 %
 %   G is MHEX Graph handle

@@ -1,2 +1,4 @@
-# mhex_graph
-Implementation of Modified Hierarchy-Exclusion Graph (MHEX Graph). The original HEX Graph is proposed in D. Jia et al, Large-Scale Object Classification using Label Relation Graphs, in ECCV 2014
+# Modified Hierarchy-Exclusion Graph (MHEX Graph)
+Implementation of Modified Hierarchy-Exclusion Graph (MHEX Graph) [1].
+
+[1] R. Hu, Modified Hierarchy-Exclusion Graph for Efficient Inference and Training on DAG Label Hierarchies, Tech Report, 2015

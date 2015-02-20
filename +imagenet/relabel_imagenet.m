@@ -1,5 +1,5 @@
 function relabel_imagenet(G, input_file, save_file, relabel_percent)
-% relabel_imagenet(G, input_file, save_file, relabel_percent)
+% imagenet.relabel_imagenet(G, input_file, save_file, relabel_percent)
 %   a tool to relabel imagenet leaf labels to their immediate parent to
 %   reproduce the experiment in HEX paper.
 %

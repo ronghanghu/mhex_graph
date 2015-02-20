@@ -1,5 +1,5 @@
 function [matched_1, matched_2] = match_graphs(G1, G2)
-% [matched_1, matched_2] = match_graph(G1, G2)
+% [matched_1, matched_2] = imagenet.match_graph(G1, G2)
 %   Match leaves in Graph 1 to leaves in Graph 2
 %
 %   G1 and G2 are MHEX Graph handles

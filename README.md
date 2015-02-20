@@ -23,7 +23,7 @@ layers {
   blobs_lr: 0
   weight_decay: 0
   weight_decay: 0
-  # set num_output to |V_L|, leaf node number
+  # set num_output to |V_L|, of leaf nodes
   inner_product_param { num_output: 1000 }
 }
 # MHEX Softmax
@@ -44,7 +44,7 @@ layers {
   blobs_lr: 0
   weight_decay: 0
   weight_decay: 0
-  # set num_output to |V|, internal node number
+  # set num_output to |V|, number of internal + leaf nodes
   inner_product_param { num_output: 1860 }
 }
 </code></pre>  

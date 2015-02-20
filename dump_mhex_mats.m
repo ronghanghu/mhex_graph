@@ -1,10 +1,11 @@
-function dump_mhex_to_mat(G, filename, include_root)
-% dump_mhex_to_mat(G, filename, include_root)
+function [M1, M2] = dump_mhex_mats(G, filename, include_root)
+% [M1, M2] = dump_mhex_mats(G, filename, include_root)
 %   Dump MHEX Graph to files
 %
 %   G is MHEX Graph handle
-%   filename is the fullpath of output dump file
+%   filename is the fullpath of output dump file (can be empty string)
 %   include_root is whether or not to include root node in dumped file
+%   M1 and M2 are MHEX Graph matrices during inference.
 
 % AUTORIGHTS
 % ---------------------------------------------------------
@@ -39,7 +40,9 @@ if ~include_root
   M2 = M2(~is_root, :);
 end
 
-save(filename, 'M1', 'M2', '-v7');
-fprintf('successfully dumped MHEX Graph to %s\n', filename);
+if exist('filename', 'var')
+  save(filename, 'M1', 'M2', '-v7');
+  fprintf('successfully dumped MHEX Graph to %s\n', filename);
+end
 
 end

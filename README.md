@@ -11,7 +11,7 @@ G_1k = build_mhex_from_synsets(meta_1k.synsets_1k);
 </code></pre>
 3. load M1 and M2 in Caffe.  
 3.1. your mhex layers in Caffe network prototxt should look like
-<pre><code> # MHEX Graph
+<pre><code># MHEX Graph
 # MHEX M1
 layers {
   name: "mhex_mat1"
